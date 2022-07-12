@@ -28,7 +28,7 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr14", 0x00000000)
     //NameObj with Buffer: Thunderbolt Control Registers buffer
     Name (TCRB, Buffer (0x12){})
     
-    If (LEqual (TABU, 0x2))
+    If (LEqual (TABU, One))
     {
         Store ("=============================================", Debug)
         Store ("Nebula Thunderbolt ACPI Controller Loading...", Debug)
@@ -47,7 +47,7 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr14", 0x00000000)
         Store ("=============================================", Debug)
         Store ("DSDT PATCH: Ellte X2 END OF TINI FOR TBINI:", Debug)
         Store ("FIND = 5442494E414442470D456E6454494E49", Debug)
-        Store ("REPLACE = 414442470D456E642D6F662D 54494E49 ", Debug)
+        Store ("REPLACE = 414442470D456E642D6F662D54494E49 ", Debug)
         Store ("=============================================", Debug)
     }
     
