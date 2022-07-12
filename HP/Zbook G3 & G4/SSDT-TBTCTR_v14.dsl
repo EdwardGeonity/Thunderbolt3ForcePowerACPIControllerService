@@ -4,7 +4,7 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr14", 0x00000000)
     External (_SB_.GGOV, MethodObj)
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.GPCB, MethodObj)
-    External (_SB_.TBFP, MethodObj)
+    External (_SB_.TBFP, MethodObj) //Thunderbolt Force Power Method
     External (FPGN, FieldUnitObj) //HP ForcePowerGpioNumber (FPGN)
     External (SOHP, FieldUnitObj)
     External (TBSE, FieldUnitObj)
