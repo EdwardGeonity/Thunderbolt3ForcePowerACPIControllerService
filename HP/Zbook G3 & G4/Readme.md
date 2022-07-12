@@ -3,7 +3,7 @@ That is Debug build version of ACPI driver to control its state and to make it f
 
 
 
-1. DSDT PATCHES REQUIARED:
+1. DSDT PATCHES REQUIRED:
 
      RENAME "DSDT PATCH Zbook G3+G4 END OF TINI FOR TBINI"
          FIND = 700D456E642D6F662D54
