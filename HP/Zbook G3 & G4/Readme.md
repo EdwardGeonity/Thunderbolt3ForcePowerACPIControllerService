@@ -19,3 +19,10 @@ That is Debug build version of ACPI driver to control its state and to make it f
                
 2. Place SSDT into ACPI folder
 3. If Hackintosh - Use TB3HP SSDT or TBTONPCH SSDT
+
+
+
+==============================================
+If you do want to treat me a cup of Capuchino:
+Paypal: edwardgeonity@gmail.com
+==============================================
