@@ -1,5 +1,5 @@
 
-DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr12", 0x00000000)
+DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr14", 0x00000000)
 {
     External (_SB_.GGOV, MethodObj)
     External (_SB_.PCI0, DeviceObj)
@@ -12,8 +12,8 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr12", 0x00000000)
     External (TBTF, MethodObj)
     External (TBTS, FieldUnitObj)
 
-    //Thundebolt ACPI Controller Driver
-    Name (TACD, 0x12)
+    //Thundebolt ACPI Controller Driver Version
+    Name (TACD, 0x14)
     
     //NameObj: Thunderbolt Allowed By User Status (Zero - Not Allowed, One - Allowed) (TABU)   
     Name (TABU, One)
