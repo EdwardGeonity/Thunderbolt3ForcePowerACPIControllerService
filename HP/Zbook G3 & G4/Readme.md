@@ -23,6 +23,6 @@ That is Debug build version of ACPI driver to control its state and to make it f
 
 
 //////////////////////////////////////////////
+
 If you do want to treat me a cup of Capuchino:
 Paypal: edwardgeonity@gmail.com
-//////////////////////////////////////////////
