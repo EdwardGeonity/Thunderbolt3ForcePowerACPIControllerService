@@ -1,0 +1,10 @@
+
+
+    DSDT PATCHES REQUIARED:
+
+    RENAME "" FIND= REPLACE=
+
+    RENAME "" FIND= REPLACE=
+
+    Place SSDT into ACPI folder
+
