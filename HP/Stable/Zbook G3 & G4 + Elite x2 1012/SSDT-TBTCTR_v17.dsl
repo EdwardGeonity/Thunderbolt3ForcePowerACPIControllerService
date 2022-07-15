@@ -9,7 +9,7 @@
  *
  * This software was tested only at HP Zbook G3, HP Zbook G4, HP Ellite 1012 X2, Dell XPS 15 9575
  * Usage with other devices not confirmed and not safety granted. 
- * By using this software, you are aggree to be responsible to any 
+ * By using this software, you are agree to be responsible to any 
  * By using this software, you agree to be responsible for any malfunction 
  * that the program may cause to your hardware or operating system. 
  * The developer is not responsible for any consequences of use.
