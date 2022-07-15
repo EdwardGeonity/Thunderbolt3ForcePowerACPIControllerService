@@ -1,3 +1,44 @@
+/*
+ * Copyright 2022 EdwardGeonity (EdwardGeo, BigguyGeo)
+ * All Rights Reserved.
+ *
+ * This program is distributed in the hope that it will be useful, 
+ * and with hope to future modifications for better and universal compatibility.
+ * But WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * This software was tested only at HP Zbook G3, HP Zbook G4, HP Ellite 1012 X2, Dell XPS 15 9575
+ * Usage with other devices not confirmed and not safety granted. 
+ * By using this software, you are aggree to be responsible to any 
+ * By using this software, you agree to be responsible for any malfunction 
+ * that the program may cause to your hardware or operating system. 
+ * The developer is not responsible for any consequences of use.
+ * Copyright and Related Rights. A Work made available under CC0 may be
+ * protected by copyright and related or neighboring rights ("Copyright and
+ * Related Rights"). Copyright and Related Rights include, but are not
+ * limited to, the following:
+ * 
+ *   i. the right to reproduce, adapt, distribute, perform, display,
+ *      communicate, and translate a Work;
+ *  ii. moral rights retained by the original author(s) and/or performer(s);
+ * iii. publicity and privacy rights pertaining to a person's image or
+ *      likeness depicted in a Work;
+ *  iv. rights protecting against unfair competition in regards to a Work,
+ *      subject to the limitations in paragraph 4(a), below;
+ *   v. rights protecting the extraction, dissemination, use and reuse of data
+ *      in a Work;
+ *  vi. database rights (such as those arising under Directive 96/9/EC of the
+ *      European Parliament and of the Council of 11 March 1996 on the legal
+ *      protection of databases, and under any national implementation
+ *      thereof, including any amended or successor version of such
+ *      directive); and
+ * vii. other similar, equivalent or corresponding rights throughout the
+ *      world based on applicable law or treaty, and any national
+ *     implementations thereof.
+ *
+ */
+ 
+
 
 DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr17", 0x00000000)
 {
