@@ -1,4 +1,4 @@
-That is Debug build version of ACPI driver to control its state and to make it full-time avaliable to system.
+That is Final Stable build version of ACPI driver to control its state and to make it full-time avaliable to system.
 
 
 
