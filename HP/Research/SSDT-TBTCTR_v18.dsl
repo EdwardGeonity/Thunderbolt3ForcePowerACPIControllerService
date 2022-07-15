@@ -1,5 +1,5 @@
     
-DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr19", 0x00000000)
+DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr18", 0x00000000)
 {
     External (_SB_.GGOV, MethodObj)
     External (_SB_.PCI0, DeviceObj)
@@ -29,7 +29,7 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtCtr19", 0x00000000)
     //NameObj with Buffer: Thunderbolt Control Registers buffer
     Name (TCRB, Buffer (0x40){}) //64bytes for future
     
-    If (LEqual (TABU, 0x2))
+    If (LEqual (TABU, One))
     {
         Store ("=============================================", Debug)
         Store ("Nebula Thunderbolt ACPI Controller Loading...", Debug)
