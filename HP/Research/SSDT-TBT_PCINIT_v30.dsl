@@ -6,7 +6,8 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
     External (FPGN, FieldUnitObj)  
     External (SOHP, FieldUnitObj)    
     External (TBSE, FieldUnitObj)   
-    External (TBTD, MethodObj)   
+    External (PNVD, MethodObj) 
+    External (TBTD, MethodObj)    
     External (TBTF, MethodObj)    
     External (TBTS, FieldUnitObj)  
 
@@ -14,6 +15,27 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
     {
         Name (_HID, "DEVXDEAD")  // _HID: Hardware ID
         Name (WAI9, Zero)
+        Method (CDBG, 0, NotSerialized)
+        {
+            Name (DBGL, Zero)
+            
+            If (LEqual (DBGL, One))
+            {
+                WTFC ()
+            }
+            If (LEqual (DBGL, 0x02))
+            {
+                \PNVD ()
+            }
+
+            If (LEqual (DBGL, 0x03))
+            {
+                WTFC ()
+               \HMAC ()
+            
+            }
+            VAIT ()
+        }
         Method (WTFC, 0, NotSerialized)
         {
             Name (HLP7, "TBT: UPSTREAM PCI CONFIG - DUMP")
@@ -31,26 +53,26 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
             }
 
             Name (HLP9, "TBT: PCI to PCI CONFIG - DUMP")
-            OperationRegion (TWD1, SystemMemory, Add (\_SB.PCI0.THND.TBRA, 0x0800), 0x0256)
+            OperationRegion (TWD1, SystemMemory, \_SB.PCI0.THND.TBR1, 0x0256)
             Field (TWD1, AnyAcc, Lock, Preserve)
             {
                 F508,   512
             }
 
             Name (HLPA, "TBT: PCI to PCI CONFIG - DUMP")
-            OperationRegion (TWBQ, SystemMemory, Add (\_SB.PCI0.THND.TBRA, 0x1000), 0x0256)
+            OperationRegion (TWBQ, SystemMemory, \_SB.PCI0.THND.TBR2, 0x0256)
             Field (TWBQ, AnyAcc, Lock, Preserve)
             {
                 F510,   512
             }
 
             Name (HLPB, "TBT: PCI to PCI CONFIG - DUMP")
-            OperationRegion (TWE1, SystemMemory, Add (\_SB.PCI0.THND.TBRA, 0x2000), 0x0256)
+            OperationRegion (TWE1, SystemMemory, \_SB.PCI0.THND.TBR4, 0x0256)
             Field (TWE1, AnyAcc, Lock, Preserve)
             {
                 F520,   512
             }
-
+            
             Name (HLPC, "TBT: UPSTREAM PCI CONFIG - DUMP")
             OperationRegion (TUD1, SystemMemory, \_SB.PCI0.THND.TCDA, 0x0256)
             Field (TUD1, AnyAcc, Lock, Preserve)
@@ -93,19 +115,18 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
             TDBG ("TBT UpStream:PciConfig", "DUMP", F400)            
             TDBG ("TBT:BridgeRP:__________", "ADDR", \_SB.PCI0.THND.TBRA)
             TDBG ("TBT BridgeRP:PciConfig", "DUMP", F500)
-            TDBG ("TBT:PciRP 01", "ADDR", Add (\_SB.PCI0.THND.TBRA, 0x0800))
+            TDBG ("TBT:PciRP 01", "ADDR", \_SB.PCI0.THND.TBR1)
             TDBG ("TBT:PciRP 01", "DUMP", F508)
-            TDBG ("TBT:PciRP 02", "ADDR", Add (\_SB.PCI0.THND.TBRA, 0x1000))
+            TDBG ("TBT:PciRP 02", "ADDR", \_SB.PCI0.THND.TBR2)
             TDBG ("TBT:PciRP 02", "DUMP", F510)
-            TDBG ("TBT:PciRP 04", "ADDR", Add (\_SB.PCI0.THND.TBRA, 0x2000))
+            TDBG ("TBT:PciRP 04", "ADDR", \_SB.PCI0.THND.TBR4)
             TDBG ("TBT:PciRP 04", "DUMP", F520)
             TDBG ("NHI:ContrDEV", "ADDR", \_SB.PCI0.THND.TCDA)
             TDBG ("NHI ContrDEV:PciConfig", "DUMP", F600)
             TDBG ("NHI OpREG", "ADRS", ADQA)
             TDBG ("NHI OpREG", "DUMP", E2E2)
             TDBG ("ICME(REG)", "DUMP", ICDD)
-            HMAC ()
-            VAIT ()
+
         }
 
         Method (XDBG, 3, NotSerialized)
@@ -221,6 +242,9 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
             Name (TUSA, Zero)
             Name (TBR8, Zero)
             Name (TBRA, Zero)
+            Name (TBR1, Zero)
+            Name (TBR2, Zero)
+            Name (TBR4, Zero)
             Name (TCDB, Zero)
             Name (TCDA, Zero)
             Name (TDMR, Zero)
@@ -489,7 +513,7 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
                     Field (RP_X, DWordAcc, NoLock, Preserve)
                     {
                         Offset (0x18), 
-                        RPBS,   8,
+                        RPBS,   8
                     }
 
                     Name (HLP0, "INITIALIZE THUNDERBOLT ROOT")
@@ -611,14 +635,27 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
 
                 Method (BRG1, 0, NotSerialized)
                 {
+                    Name (DEVN, 0x01)
+                    Local0=TBRA
+                    Local0=ShiftLeft (DEVN,0x0C)
+                    TBR1=Local0
                 }
 
                 Method (BRG2, 0, NotSerialized)
                 {
+                    Name (DEVN, 0x02)
+                    Local0=TBRA
+                    Local0=ShiftLeft (DEVN,0x0C)
+                    TBR2=Local0
+            
                 }
 
                 Method (BRG4, 0, NotSerialized)
                 {
+                    Name (DEVN, 0x04)
+                    Local0=TBRA
+                    Local0=ShiftLeft (DEVN,0x0C)
+                    TBR4=Local0
                 }
 
                 Method (TBDE, 0, NotSerialized)
@@ -684,12 +721,12 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
                 TBDE ()
                 Signal (TBEV)
                 Store ("End-of-PINI", Debug)
-                \DEVD.WTFC ()
+                \DEVD.CDBG ()
             }
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                \DEVD.WTFC ()
+                \DEVD.CDBG ()
             }
         }
     }
@@ -736,9 +773,9 @@ DefinitionBlock ("", "SSDT", 2, "Nebula", "TbtIni30", 0x00000000)
         Add (\_SB.PCI0.THND.TUSA, 0x0548, T2P1)
         Store (\_SB.PCI0.THND.TUSA, TUP1)
         Store (\_SB.PCI0.THND.TBRA, TDB1)
-        Add (\_SB.PCI0.THND.TBRA, 0x8000, TD11)
-        Add (\_SB.PCI0.THND.TBRA, 0x00010000, TD21)
-        Add (\_SB.PCI0.THND.TBRA, 0x00020000, TD41)
+        Store (\_SB.PCI0.THND.TBR1, TD11)
+        Store (\_SB.PCI0.THND.TBR2, TD21)
+        Store (\_SB.PCI0.THND.TBR4, TD41)
         Store (\_SB.PCI0.THND.TCDA, TNH1)
         Store (\_SB.PCI0.THND.NHOR, NHRR)
         
