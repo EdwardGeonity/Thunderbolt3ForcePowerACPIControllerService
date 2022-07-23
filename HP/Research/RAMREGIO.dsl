@@ -1,6 +1,7 @@
 // The goal of this SSDT is to find free writable space in ram and create operational region for tbt tree devices
 // This will allow to use content of TNVS with external ssdts and reserve addreses in variables of TNVS
 // NHI1 generstion will be avaliable only after TBT Controller will be initialized, because its based on operational resources region (BAR1)
+// This way will also allow to read custom settings from custom ssdt (In Project)
 // Credit: EdwardGeonity (Edwardgeo, Biggygeo)
 
 
