@@ -1,3 +1,17 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// 	   Conditional Existence at Debug
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// (AppleACPIPlatform) "_L0F Already Exist"
+// (AppleACPIPlatform) "_L1D Already Exist"
+// (AppleACPIPlatform) "_L61 Already Exist"
+// (AppleACPIPlatform) "_L62 Already Exist"
+// (AppleACPIPlatform) "_L66 Already Exist"
+// (AppleACPIPlatform) "_L69 Already Exist"
+// (AppleACPIPlatform) "_L6D Already Exist"
+// (AppleACPIPlatform) "_L6F Already Exist"
+// (AppleACPIPlatform) "_E4C Already Exist"
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 DefinitionBlock ("", "SSDT", 2, "Nebula", "GpeDBG", 0x00020000)
 {
     External (_GPE._E01, MethodObj)
