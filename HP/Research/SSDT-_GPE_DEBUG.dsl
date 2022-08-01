@@ -1,562 +1,515 @@
-/*
- * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20200925 (64-bit version)
- * Copyright (c) 2000 - 2020 Intel Corporation
- * 
- * Disassembling to symbolic ASL+ operators
- *
- * Disassembly of iASLzfZSHM.aml, Mon Aug  1 16:10:44 2022
- *
- * Original Table Header:
- *     Signature        "SSDT"
- *     Length           0x0000AF8C (44940)
- *     Revision         0x02
- *     Checksum         0x3C
- *     OEM ID           "GpeDBG"
- *     OEM Table ID     "GpeDBG"
- *     OEM Revision     0x00020000 (131072)
- *     Compiler ID      "INTL"
- *     Compiler Version 0x20200925 (538970405)
- */
-DefinitionBlock ("", "SSDT", 2, "GpeDBG", "GpeDBG", 0x00020000)
+DefinitionBlock ("", "SSDT", 2, "Nebula", "GpeDBG", 0x00020000)
 {
-    /*
-     * iASL Warning: There were 254 external control methods found during
-     * disassembly, but only 510 were resolved (4294967040 unresolved). Additional
-     * ACPI tables may be required to properly disassemble the code. This
-     * resulting disassembler output file may not compile because the
-     * disassembler did not know how many arguments to assign to the
-     * unresolved methods. Note: SSDTs can be dynamically loaded at
-     * runtime and may or may not be available via the host OS.
-     *
-     * To specify the tables needed to resolve external control method
-     * references, the -e option can be used to specify the filenames.
-     * Example iASL invocations:
-     *     iasl -e ssdt1.aml ssdt2.aml ssdt3.aml -d dsdt.aml
-     *     iasl -e dsdt.aml ssdt2.aml -d ssdt1.aml
-     *     iasl -e ssdt*.aml -d dsdt.aml
-     *
-     * In addition, the -fe option can be used to specify a file containing
-     * control method external declarations with the associated method
-     * argument counts. Each line of the file must be of the form:
-     *     External (<method pathname>, MethodObj, <argument count>)
-     * Invocation:
-     *     iasl -fe refs.txt -d dsdt.aml
-     *
-     * The following methods were unresolved and many not compile properly
-     * because the disassembler had to guess at the number of arguments
-     * required for each:
-     */
-    External (_GPE._E01, MethodObj)    // 0 Arguments
-    External (_GPE._E02, MethodObj)    // 0 Arguments
-    External (_GPE._E03, MethodObj)    // 0 Arguments
-    External (_GPE._E04, MethodObj)    // 0 Arguments
-    External (_GPE._E05, MethodObj)    // 0 Arguments
-    External (_GPE._E06, MethodObj)    // 0 Arguments
-    External (_GPE._E07, MethodObj)    // 0 Arguments
-    External (_GPE._E08, MethodObj)    // 0 Arguments
-    External (_GPE._E09, MethodObj)    // 0 Arguments
-    External (_GPE._E0A, MethodObj)    // 0 Arguments
-    External (_GPE._E0B, MethodObj)    // 0 Arguments
-    External (_GPE._E0C, MethodObj)    // 0 Arguments
-    External (_GPE._E0D, MethodObj)    // 0 Arguments
-    External (_GPE._E0E, MethodObj)    // 0 Arguments
-    External (_GPE._E0F, MethodObj)    // 0 Arguments
-    External (_GPE._E10, MethodObj)    // 0 Arguments
-    External (_GPE._E11, MethodObj)    // 0 Arguments
-    External (_GPE._E12, MethodObj)    // 0 Arguments
-    External (_GPE._E13, MethodObj)    // 0 Arguments
-    External (_GPE._E14, MethodObj)    // 0 Arguments
-    External (_GPE._E15, MethodObj)    // 0 Arguments
-    External (_GPE._E16, MethodObj)    // 0 Arguments
-    External (_GPE._E17, MethodObj)    // 0 Arguments
-    External (_GPE._E18, MethodObj)    // 0 Arguments
-    External (_GPE._E19, MethodObj)    // 0 Arguments
-    External (_GPE._E1A, MethodObj)    // 0 Arguments
-    External (_GPE._E1B, MethodObj)    // 0 Arguments
-    External (_GPE._E1C, MethodObj)    // 0 Arguments
-    External (_GPE._E1D, MethodObj)    // 0 Arguments
-    External (_GPE._E1E, MethodObj)    // 0 Arguments
-    External (_GPE._E1F, MethodObj)    // 0 Arguments
-    External (_GPE._E20, MethodObj)    // 0 Arguments
-    External (_GPE._E21, MethodObj)    // 0 Arguments
-    External (_GPE._E22, MethodObj)    // 0 Arguments
-    External (_GPE._E23, MethodObj)    // 0 Arguments
-    External (_GPE._E24, MethodObj)    // 0 Arguments
-    External (_GPE._E25, MethodObj)    // 0 Arguments
-    External (_GPE._E26, MethodObj)    // 0 Arguments
-    External (_GPE._E27, MethodObj)    // 0 Arguments
-    External (_GPE._E28, MethodObj)    // 0 Arguments
-    External (_GPE._E29, MethodObj)    // 0 Arguments
-    External (_GPE._E2A, MethodObj)    // 0 Arguments
-    External (_GPE._E2B, MethodObj)    // 0 Arguments
-    External (_GPE._E2C, MethodObj)    // 0 Arguments
-    External (_GPE._E2D, MethodObj)    // 0 Arguments
-    External (_GPE._E2E, MethodObj)    // 0 Arguments
-    External (_GPE._E2F, MethodObj)    // 0 Arguments
-    External (_GPE._E30, MethodObj)    // 0 Arguments
-    External (_GPE._E31, MethodObj)    // 0 Arguments
-    External (_GPE._E32, MethodObj)    // 0 Arguments
-    External (_GPE._E33, MethodObj)    // 0 Arguments
-    External (_GPE._E34, MethodObj)    // 0 Arguments
-    External (_GPE._E35, MethodObj)    // 0 Arguments
-    External (_GPE._E36, MethodObj)    // 0 Arguments
-    External (_GPE._E37, MethodObj)    // 0 Arguments
-    External (_GPE._E38, MethodObj)    // 0 Arguments
-    External (_GPE._E39, MethodObj)    // 0 Arguments
-    External (_GPE._E3A, MethodObj)    // 0 Arguments
-    External (_GPE._E3B, MethodObj)    // 0 Arguments
-    External (_GPE._E3C, MethodObj)    // 0 Arguments
-    External (_GPE._E3D, MethodObj)    // 0 Arguments
-    External (_GPE._E3E, MethodObj)    // 0 Arguments
-    External (_GPE._E3F, MethodObj)    // 0 Arguments
-    External (_GPE._E40, MethodObj)    // 0 Arguments
-    External (_GPE._E41, MethodObj)    // 0 Arguments
-    External (_GPE._E42, MethodObj)    // 0 Arguments
-    External (_GPE._E43, MethodObj)    // 0 Arguments
-    External (_GPE._E44, MethodObj)    // 0 Arguments
-    External (_GPE._E45, MethodObj)    // 0 Arguments
-    External (_GPE._E46, MethodObj)    // 0 Arguments
-    External (_GPE._E47, MethodObj)    // 0 Arguments
-    External (_GPE._E48, MethodObj)    // 0 Arguments
-    External (_GPE._E49, MethodObj)    // 0 Arguments
-    External (_GPE._E4A, MethodObj)    // 0 Arguments
-    External (_GPE._E4B, MethodObj)    // 0 Arguments
-    External (_GPE._E4C, MethodObj)    // 0 Arguments
-    External (_GPE._E4D, MethodObj)    // 0 Arguments
-    External (_GPE._E4E, MethodObj)    // 0 Arguments
-    External (_GPE._E4F, MethodObj)    // 0 Arguments
-    External (_GPE._E50, MethodObj)    // 0 Arguments
-    External (_GPE._E51, MethodObj)    // 0 Arguments
-    External (_GPE._E52, MethodObj)    // 0 Arguments
-    External (_GPE._E53, MethodObj)    // 0 Arguments
-    External (_GPE._E54, MethodObj)    // 0 Arguments
-    External (_GPE._E55, MethodObj)    // 0 Arguments
-    External (_GPE._E56, MethodObj)    // 0 Arguments
-    External (_GPE._E57, MethodObj)    // 0 Arguments
-    External (_GPE._E58, MethodObj)    // 0 Arguments
-    External (_GPE._E59, MethodObj)    // 0 Arguments
-    External (_GPE._E5A, MethodObj)    // 0 Arguments
-    External (_GPE._E5B, MethodObj)    // 0 Arguments
-    External (_GPE._E5C, MethodObj)    // 0 Arguments
-    External (_GPE._E5D, MethodObj)    // 0 Arguments
-    External (_GPE._E5E, MethodObj)    // 0 Arguments
-    External (_GPE._E5F, MethodObj)    // 0 Arguments
-    External (_GPE._E60, MethodObj)    // 0 Arguments
-    External (_GPE._E61, MethodObj)    // 0 Arguments
-    External (_GPE._E62, MethodObj)    // 0 Arguments
-    External (_GPE._E63, MethodObj)    // 0 Arguments
-    External (_GPE._E64, MethodObj)    // 0 Arguments
-    External (_GPE._E65, MethodObj)    // 0 Arguments
-    External (_GPE._E66, MethodObj)    // 0 Arguments
-    External (_GPE._E67, MethodObj)    // 0 Arguments
-    External (_GPE._E68, MethodObj)    // 0 Arguments
-    External (_GPE._E69, MethodObj)    // 0 Arguments
-    External (_GPE._E6A, MethodObj)    // 0 Arguments
-    External (_GPE._E6B, MethodObj)    // 0 Arguments
-    External (_GPE._E6C, MethodObj)    // 0 Arguments
-    External (_GPE._E6D, MethodObj)    // 0 Arguments
-    External (_GPE._E6E, MethodObj)    // 0 Arguments
-    External (_GPE._E6F, MethodObj)    // 0 Arguments
-    External (_GPE._E70, MethodObj)    // 0 Arguments
-    External (_GPE._E71, MethodObj)    // 0 Arguments
-    External (_GPE._E72, MethodObj)    // 0 Arguments
-    External (_GPE._E73, MethodObj)    // 0 Arguments
-    External (_GPE._E74, MethodObj)    // 0 Arguments
-    External (_GPE._E75, MethodObj)    // 0 Arguments
-    External (_GPE._E76, MethodObj)    // 0 Arguments
-    External (_GPE._E77, MethodObj)    // 0 Arguments
-    External (_GPE._E78, MethodObj)    // 0 Arguments
-    External (_GPE._E79, MethodObj)    // 0 Arguments
-    External (_GPE._E7A, MethodObj)    // 0 Arguments
-    External (_GPE._E7B, MethodObj)    // 0 Arguments
-    External (_GPE._E7C, MethodObj)    // 0 Arguments
-    External (_GPE._E7D, MethodObj)    // 0 Arguments
-    External (_GPE._E7E, MethodObj)    // 0 Arguments
-    External (_GPE._E7F, MethodObj)    // 0 Arguments
-    External (_GPE._E80, MethodObj)    // 0 Arguments
-    External (_GPE._E81, MethodObj)    // 0 Arguments
-    External (_GPE._E82, MethodObj)    // 0 Arguments
-    External (_GPE._E83, MethodObj)    // 0 Arguments
-    External (_GPE._E84, MethodObj)    // 0 Arguments
-    External (_GPE._E85, MethodObj)    // 0 Arguments
-    External (_GPE._E86, MethodObj)    // 0 Arguments
-    External (_GPE._E87, MethodObj)    // 0 Arguments
-    External (_GPE._E88, MethodObj)    // 0 Arguments
-    External (_GPE._E89, MethodObj)    // 0 Arguments
-    External (_GPE._E8A, MethodObj)    // 0 Arguments
-    External (_GPE._E8B, MethodObj)    // 0 Arguments
-    External (_GPE._E8C, MethodObj)    // 0 Arguments
-    External (_GPE._E8D, MethodObj)    // 0 Arguments
-    External (_GPE._E8E, MethodObj)    // 0 Arguments
-    External (_GPE._E8F, MethodObj)    // 0 Arguments
-    External (_GPE._E90, MethodObj)    // 0 Arguments
-    External (_GPE._E91, MethodObj)    // 0 Arguments
-    External (_GPE._E92, MethodObj)    // 0 Arguments
-    External (_GPE._E93, MethodObj)    // 0 Arguments
-    External (_GPE._E94, MethodObj)    // 0 Arguments
-    External (_GPE._E95, MethodObj)    // 0 Arguments
-    External (_GPE._E96, MethodObj)    // 0 Arguments
-    External (_GPE._E97, MethodObj)    // 0 Arguments
-    External (_GPE._E98, MethodObj)    // 0 Arguments
-    External (_GPE._E99, MethodObj)    // 0 Arguments
-    External (_GPE._E9A, MethodObj)    // 0 Arguments
-    External (_GPE._E9B, MethodObj)    // 0 Arguments
-    External (_GPE._E9C, MethodObj)    // 0 Arguments
-    External (_GPE._E9D, MethodObj)    // 0 Arguments
-    External (_GPE._E9E, MethodObj)    // 0 Arguments
-    External (_GPE._E9F, MethodObj)    // 0 Arguments
-    External (_GPE._EA0, MethodObj)    // 0 Arguments
-    External (_GPE._EA1, MethodObj)    // 0 Arguments
-    External (_GPE._EA2, MethodObj)    // 0 Arguments
-    External (_GPE._EA3, MethodObj)    // 0 Arguments
-    External (_GPE._EA4, MethodObj)    // 0 Arguments
-    External (_GPE._EA5, MethodObj)    // 0 Arguments
-    External (_GPE._EA6, MethodObj)    // 0 Arguments
-    External (_GPE._EA7, MethodObj)    // 0 Arguments
-    External (_GPE._EA8, MethodObj)    // 0 Arguments
-    External (_GPE._EA9, MethodObj)    // 0 Arguments
-    External (_GPE._EAA, MethodObj)    // 0 Arguments
-    External (_GPE._EAB, MethodObj)    // 0 Arguments
-    External (_GPE._EAC, MethodObj)    // 0 Arguments
-    External (_GPE._EAD, MethodObj)    // 0 Arguments
-    External (_GPE._EAE, MethodObj)    // 0 Arguments
-    External (_GPE._EAF, MethodObj)    // 0 Arguments
-    External (_GPE._EB0, MethodObj)    // 0 Arguments
-    External (_GPE._EB1, MethodObj)    // 0 Arguments
-    External (_GPE._EB2, MethodObj)    // 0 Arguments
-    External (_GPE._EB3, MethodObj)    // 0 Arguments
-    External (_GPE._EB4, MethodObj)    // 0 Arguments
-    External (_GPE._EB5, MethodObj)    // 0 Arguments
-    External (_GPE._EB6, MethodObj)    // 0 Arguments
-    External (_GPE._EB7, MethodObj)    // 0 Arguments
-    External (_GPE._EB8, MethodObj)    // 0 Arguments
-    External (_GPE._EB9, MethodObj)    // 0 Arguments
-    External (_GPE._EBA, MethodObj)    // 0 Arguments
-    External (_GPE._EBB, MethodObj)    // 0 Arguments
-    External (_GPE._EBC, MethodObj)    // 0 Arguments
-    External (_GPE._EBD, MethodObj)    // 0 Arguments
-    External (_GPE._EBE, MethodObj)    // 0 Arguments
-    External (_GPE._EBF, MethodObj)    // 0 Arguments
-    External (_GPE._EC0, MethodObj)    // 0 Arguments
-    External (_GPE._EC1, MethodObj)    // 0 Arguments
-    External (_GPE._EC2, MethodObj)    // 0 Arguments
-    External (_GPE._EC3, MethodObj)    // 0 Arguments
-    External (_GPE._EC4, MethodObj)    // 0 Arguments
-    External (_GPE._EC5, MethodObj)    // 0 Arguments
-    External (_GPE._EC6, MethodObj)    // 0 Arguments
-    External (_GPE._EC7, MethodObj)    // 0 Arguments
-    External (_GPE._EC8, MethodObj)    // 0 Arguments
-    External (_GPE._EC9, MethodObj)    // 0 Arguments
-    External (_GPE._ECA, MethodObj)    // 0 Arguments
-    External (_GPE._ECB, MethodObj)    // 0 Arguments
-    External (_GPE._ECC, MethodObj)    // 0 Arguments
-    External (_GPE._ECD, MethodObj)    // 0 Arguments
-    External (_GPE._ECE, MethodObj)    // 0 Arguments
-    External (_GPE._ECF, MethodObj)    // 0 Arguments
-    External (_GPE._ED0, MethodObj)    // 0 Arguments
-    External (_GPE._ED1, MethodObj)    // 0 Arguments
-    External (_GPE._ED2, MethodObj)    // 0 Arguments
-    External (_GPE._ED3, MethodObj)    // 0 Arguments
-    External (_GPE._ED4, MethodObj)    // 0 Arguments
-    External (_GPE._ED5, MethodObj)    // 0 Arguments
-    External (_GPE._ED6, MethodObj)    // 0 Arguments
-    External (_GPE._ED7, MethodObj)    // 0 Arguments
-    External (_GPE._ED8, MethodObj)    // 0 Arguments
-    External (_GPE._ED9, MethodObj)    // 0 Arguments
-    External (_GPE._EDA, MethodObj)    // 0 Arguments
-    External (_GPE._EDB, MethodObj)    // 0 Arguments
-    External (_GPE._EDC, MethodObj)    // 0 Arguments
-    External (_GPE._EDD, MethodObj)    // 0 Arguments
-    External (_GPE._EDE, MethodObj)    // 0 Arguments
-    External (_GPE._EDF, MethodObj)    // 0 Arguments
-    External (_GPE._EE0, MethodObj)    // 0 Arguments
-    External (_GPE._EE1, MethodObj)    // 0 Arguments
-    External (_GPE._EE2, MethodObj)    // 0 Arguments
-    External (_GPE._EE3, MethodObj)    // 0 Arguments
-    External (_GPE._EE4, MethodObj)    // 0 Arguments
-    External (_GPE._EE5, MethodObj)    // 0 Arguments
-    External (_GPE._EE6, MethodObj)    // 0 Arguments
-    External (_GPE._EE7, MethodObj)    // 0 Arguments
-    External (_GPE._EE8, MethodObj)    // 0 Arguments
-    External (_GPE._EE9, MethodObj)    // 0 Arguments
-    External (_GPE._EEA, MethodObj)    // 0 Arguments
-    External (_GPE._EEB, MethodObj)    // 0 Arguments
-    External (_GPE._EEC, MethodObj)    // 0 Arguments
-    External (_GPE._EED, MethodObj)    // 0 Arguments
-    External (_GPE._EEE, MethodObj)    // 0 Arguments
-    External (_GPE._EEF, MethodObj)    // 0 Arguments
-    External (_GPE._EF0, MethodObj)    // 0 Arguments
-    External (_GPE._EF1, MethodObj)    // 0 Arguments
-    External (_GPE._EF2, MethodObj)    // 0 Arguments
-    External (_GPE._EF3, MethodObj)    // 0 Arguments
-    External (_GPE._EF4, MethodObj)    // 0 Arguments
-    External (_GPE._EF5, MethodObj)    // 0 Arguments
-    External (_GPE._EF6, MethodObj)    // 0 Arguments
-    External (_GPE._EF7, MethodObj)    // 0 Arguments
-    External (_GPE._EF8, MethodObj)    // 0 Arguments
-    External (_GPE._EF9, MethodObj)    // 0 Arguments
-    External (_GPE._EFA, MethodObj)    // 0 Arguments
-    External (_GPE._EFB, MethodObj)    // 0 Arguments
-    External (_GPE._EFC, MethodObj)    // 0 Arguments
-    External (_GPE._EFD, MethodObj)    // 0 Arguments
-    External (_GPE._EFE, MethodObj)    // 0 Arguments
-    External (_GPE._EFF, MethodObj)    // 0 Arguments
-    External (_GPE._L01, MethodObj)    // 0 Arguments
-    External (_GPE._L02, MethodObj)    // 0 Arguments
-    External (_GPE._L03, MethodObj)    // 0 Arguments
-    External (_GPE._L04, MethodObj)    // 0 Arguments
-    External (_GPE._L05, MethodObj)    // 0 Arguments
-    External (_GPE._L06, MethodObj)    // 0 Arguments
-    External (_GPE._L07, MethodObj)    // 0 Arguments
-    External (_GPE._L08, MethodObj)    // 0 Arguments
-    External (_GPE._L09, MethodObj)    // 0 Arguments
-    External (_GPE._L0A, MethodObj)    // 0 Arguments
-    External (_GPE._L0B, MethodObj)    // 0 Arguments
-    External (_GPE._L0C, MethodObj)    // 0 Arguments
-    External (_GPE._L0D, MethodObj)    // 0 Arguments
-    External (_GPE._L0E, MethodObj)    // 0 Arguments
-    External (_GPE._L0F, MethodObj)    // 0 Arguments
-    External (_GPE._L10, MethodObj)    // 0 Arguments
-    External (_GPE._L11, MethodObj)    // 0 Arguments
-    External (_GPE._L12, MethodObj)    // 0 Arguments
-    External (_GPE._L13, MethodObj)    // 0 Arguments
-    External (_GPE._L14, MethodObj)    // 0 Arguments
-    External (_GPE._L15, MethodObj)    // 0 Arguments
-    External (_GPE._L16, MethodObj)    // 0 Arguments
-    External (_GPE._L17, MethodObj)    // 0 Arguments
-    External (_GPE._L18, MethodObj)    // 0 Arguments
-    External (_GPE._L19, MethodObj)    // 0 Arguments
-    External (_GPE._L1A, MethodObj)    // 0 Arguments
-    External (_GPE._L1B, MethodObj)    // 0 Arguments
-    External (_GPE._L1C, MethodObj)    // 0 Arguments
-    External (_GPE._L1D, MethodObj)    // 0 Arguments
-    External (_GPE._L1E, MethodObj)    // 0 Arguments
-    External (_GPE._L1F, MethodObj)    // 0 Arguments
-    External (_GPE._L20, MethodObj)    // 0 Arguments
-    External (_GPE._L21, MethodObj)    // 0 Arguments
-    External (_GPE._L22, MethodObj)    // 0 Arguments
-    External (_GPE._L23, MethodObj)    // 0 Arguments
-    External (_GPE._L24, MethodObj)    // 0 Arguments
-    External (_GPE._L25, MethodObj)    // 0 Arguments
-    External (_GPE._L26, MethodObj)    // 0 Arguments
-    External (_GPE._L27, MethodObj)    // 0 Arguments
-    External (_GPE._L28, MethodObj)    // 0 Arguments
-    External (_GPE._L29, MethodObj)    // 0 Arguments
-    External (_GPE._L2A, MethodObj)    // 0 Arguments
-    External (_GPE._L2B, MethodObj)    // 0 Arguments
-    External (_GPE._L2C, MethodObj)    // 0 Arguments
-    External (_GPE._L2D, MethodObj)    // 0 Arguments
-    External (_GPE._L2E, MethodObj)    // 0 Arguments
-    External (_GPE._L2F, MethodObj)    // 0 Arguments
-    External (_GPE._L30, MethodObj)    // 0 Arguments
-    External (_GPE._L31, MethodObj)    // 0 Arguments
-    External (_GPE._L32, MethodObj)    // 0 Arguments
-    External (_GPE._L33, MethodObj)    // 0 Arguments
-    External (_GPE._L34, MethodObj)    // 0 Arguments
-    External (_GPE._L35, MethodObj)    // 0 Arguments
-    External (_GPE._L36, MethodObj)    // 0 Arguments
-    External (_GPE._L37, MethodObj)    // 0 Arguments
-    External (_GPE._L38, MethodObj)    // 0 Arguments
-    External (_GPE._L39, MethodObj)    // 0 Arguments
-    External (_GPE._L3A, MethodObj)    // 0 Arguments
-    External (_GPE._L3B, MethodObj)    // 0 Arguments
-    External (_GPE._L3C, MethodObj)    // 0 Arguments
-    External (_GPE._L3D, MethodObj)    // 0 Arguments
-    External (_GPE._L3E, MethodObj)    // 0 Arguments
-    External (_GPE._L3F, MethodObj)    // 0 Arguments
-    External (_GPE._L40, MethodObj)    // 0 Arguments
-    External (_GPE._L41, MethodObj)    // 0 Arguments
-    External (_GPE._L42, MethodObj)    // 0 Arguments
-    External (_GPE._L43, MethodObj)    // 0 Arguments
-    External (_GPE._L44, MethodObj)    // 0 Arguments
-    External (_GPE._L45, MethodObj)    // 0 Arguments
-    External (_GPE._L46, MethodObj)    // 0 Arguments
-    External (_GPE._L47, MethodObj)    // 0 Arguments
-    External (_GPE._L48, MethodObj)    // 0 Arguments
-    External (_GPE._L49, MethodObj)    // 0 Arguments
-    External (_GPE._L4A, MethodObj)    // 0 Arguments
-    External (_GPE._L4B, MethodObj)    // 0 Arguments
-    External (_GPE._L4C, MethodObj)    // 0 Arguments
-    External (_GPE._L4D, MethodObj)    // 0 Arguments
-    External (_GPE._L4E, MethodObj)    // 0 Arguments
-    External (_GPE._L4F, MethodObj)    // 0 Arguments
-    External (_GPE._L50, MethodObj)    // 0 Arguments
-    External (_GPE._L51, MethodObj)    // 0 Arguments
-    External (_GPE._L52, MethodObj)    // 0 Arguments
-    External (_GPE._L53, MethodObj)    // 0 Arguments
-    External (_GPE._L54, MethodObj)    // 0 Arguments
-    External (_GPE._L55, MethodObj)    // 0 Arguments
-    External (_GPE._L56, MethodObj)    // 0 Arguments
-    External (_GPE._L57, MethodObj)    // 0 Arguments
-    External (_GPE._L58, MethodObj)    // 0 Arguments
-    External (_GPE._L59, MethodObj)    // 0 Arguments
-    External (_GPE._L5A, MethodObj)    // 0 Arguments
-    External (_GPE._L5B, MethodObj)    // 0 Arguments
-    External (_GPE._L5C, MethodObj)    // 0 Arguments
-    External (_GPE._L5D, MethodObj)    // 0 Arguments
-    External (_GPE._L5E, MethodObj)    // 0 Arguments
-    External (_GPE._L5F, MethodObj)    // 0 Arguments
-    External (_GPE._L60, MethodObj)    // 0 Arguments
-    External (_GPE._L61, MethodObj)    // 0 Arguments
-    External (_GPE._L62, MethodObj)    // 0 Arguments
-    External (_GPE._L63, MethodObj)    // 0 Arguments
-    External (_GPE._L64, MethodObj)    // 0 Arguments
-    External (_GPE._L65, MethodObj)    // 0 Arguments
-    External (_GPE._L66, MethodObj)    // 0 Arguments
-    External (_GPE._L67, MethodObj)    // 0 Arguments
-    External (_GPE._L68, MethodObj)    // 0 Arguments
-    External (_GPE._L69, MethodObj)    // 0 Arguments
-    External (_GPE._L6A, MethodObj)    // 0 Arguments
-    External (_GPE._L6B, MethodObj)    // 0 Arguments
-    External (_GPE._L6C, MethodObj)    // 0 Arguments
-    External (_GPE._L6D, MethodObj)    // 0 Arguments
-    External (_GPE._L6E, MethodObj)    // 0 Arguments
-    External (_GPE._L6F, MethodObj)    // 0 Arguments
-    External (_GPE._L70, MethodObj)    // 0 Arguments
-    External (_GPE._L71, MethodObj)    // 0 Arguments
-    External (_GPE._L72, MethodObj)    // 0 Arguments
-    External (_GPE._L73, MethodObj)    // 0 Arguments
-    External (_GPE._L74, MethodObj)    // 0 Arguments
-    External (_GPE._L75, MethodObj)    // 0 Arguments
-    External (_GPE._L76, MethodObj)    // 0 Arguments
-    External (_GPE._L77, MethodObj)    // 0 Arguments
-    External (_GPE._L78, MethodObj)    // 0 Arguments
-    External (_GPE._L79, MethodObj)    // 0 Arguments
-    External (_GPE._L7A, MethodObj)    // 0 Arguments
-    External (_GPE._L7B, MethodObj)    // 0 Arguments
-    External (_GPE._L7C, MethodObj)    // 0 Arguments
-    External (_GPE._L7D, MethodObj)    // 0 Arguments
-    External (_GPE._L7E, MethodObj)    // 0 Arguments
-    External (_GPE._L7F, MethodObj)    // 0 Arguments
-    External (_GPE._L80, MethodObj)    // 0 Arguments
-    External (_GPE._L81, MethodObj)    // 0 Arguments
-    External (_GPE._L82, MethodObj)    // 0 Arguments
-    External (_GPE._L83, MethodObj)    // 0 Arguments
-    External (_GPE._L84, MethodObj)    // 0 Arguments
-    External (_GPE._L85, MethodObj)    // 0 Arguments
-    External (_GPE._L86, MethodObj)    // 0 Arguments
-    External (_GPE._L87, MethodObj)    // 0 Arguments
-    External (_GPE._L88, MethodObj)    // 0 Arguments
-    External (_GPE._L89, MethodObj)    // 0 Arguments
-    External (_GPE._L8A, MethodObj)    // 0 Arguments
-    External (_GPE._L8B, MethodObj)    // 0 Arguments
-    External (_GPE._L8C, MethodObj)    // 0 Arguments
-    External (_GPE._L8D, MethodObj)    // 0 Arguments
-    External (_GPE._L8E, MethodObj)    // 0 Arguments
-    External (_GPE._L8F, MethodObj)    // 0 Arguments
-    External (_GPE._L90, MethodObj)    // 0 Arguments
-    External (_GPE._L91, MethodObj)    // 0 Arguments
-    External (_GPE._L92, MethodObj)    // 0 Arguments
-    External (_GPE._L93, MethodObj)    // 0 Arguments
-    External (_GPE._L94, MethodObj)    // 0 Arguments
-    External (_GPE._L95, MethodObj)    // 0 Arguments
-    External (_GPE._L96, MethodObj)    // 0 Arguments
-    External (_GPE._L97, MethodObj)    // 0 Arguments
-    External (_GPE._L98, MethodObj)    // 0 Arguments
-    External (_GPE._L99, MethodObj)    // 0 Arguments
-    External (_GPE._L9A, MethodObj)    // 0 Arguments
-    External (_GPE._L9B, MethodObj)    // 0 Arguments
-    External (_GPE._L9C, MethodObj)    // 0 Arguments
-    External (_GPE._L9D, MethodObj)    // 0 Arguments
-    External (_GPE._L9E, MethodObj)    // 0 Arguments
-    External (_GPE._L9F, MethodObj)    // 0 Arguments
-    External (_GPE._LA0, MethodObj)    // 0 Arguments
-    External (_GPE._LA1, MethodObj)    // 0 Arguments
-    External (_GPE._LA2, MethodObj)    // 0 Arguments
-    External (_GPE._LA3, MethodObj)    // 0 Arguments
-    External (_GPE._LA4, MethodObj)    // 0 Arguments
-    External (_GPE._LA5, MethodObj)    // 0 Arguments
-    External (_GPE._LA6, MethodObj)    // 0 Arguments
-    External (_GPE._LA7, MethodObj)    // 0 Arguments
-    External (_GPE._LA8, MethodObj)    // 0 Arguments
-    External (_GPE._LA9, MethodObj)    // 0 Arguments
-    External (_GPE._LAA, MethodObj)    // 0 Arguments
-    External (_GPE._LAB, MethodObj)    // 0 Arguments
-    External (_GPE._LAC, MethodObj)    // 0 Arguments
-    External (_GPE._LAD, MethodObj)    // 0 Arguments
-    External (_GPE._LAE, MethodObj)    // 0 Arguments
-    External (_GPE._LAF, MethodObj)    // 0 Arguments
-    External (_GPE._LB0, MethodObj)    // 0 Arguments
-    External (_GPE._LB1, MethodObj)    // 0 Arguments
-    External (_GPE._LB2, MethodObj)    // 0 Arguments
-    External (_GPE._LB3, MethodObj)    // 0 Arguments
-    External (_GPE._LB4, MethodObj)    // 0 Arguments
-    External (_GPE._LB5, MethodObj)    // 0 Arguments
-    External (_GPE._LB6, MethodObj)    // 0 Arguments
-    External (_GPE._LB7, MethodObj)    // 0 Arguments
-    External (_GPE._LB8, MethodObj)    // 0 Arguments
-    External (_GPE._LB9, MethodObj)    // 0 Arguments
-    External (_GPE._LBA, MethodObj)    // 0 Arguments
-    External (_GPE._LBB, MethodObj)    // 0 Arguments
-    External (_GPE._LBC, MethodObj)    // 0 Arguments
-    External (_GPE._LBD, MethodObj)    // 0 Arguments
-    External (_GPE._LBE, MethodObj)    // 0 Arguments
-    External (_GPE._LBF, MethodObj)    // 0 Arguments
-    External (_GPE._LC0, MethodObj)    // 0 Arguments
-    External (_GPE._LC1, MethodObj)    // 0 Arguments
-    External (_GPE._LC2, MethodObj)    // 0 Arguments
-    External (_GPE._LC3, MethodObj)    // 0 Arguments
-    External (_GPE._LC4, MethodObj)    // 0 Arguments
-    External (_GPE._LC5, MethodObj)    // 0 Arguments
-    External (_GPE._LC6, MethodObj)    // 0 Arguments
-    External (_GPE._LC7, MethodObj)    // 0 Arguments
-    External (_GPE._LC8, MethodObj)    // 0 Arguments
-    External (_GPE._LC9, MethodObj)    // 0 Arguments
-    External (_GPE._LCA, MethodObj)    // 0 Arguments
-    External (_GPE._LCB, MethodObj)    // 0 Arguments
-    External (_GPE._LCC, MethodObj)    // 0 Arguments
-    External (_GPE._LCD, MethodObj)    // 0 Arguments
-    External (_GPE._LCE, MethodObj)    // 0 Arguments
-    External (_GPE._LCF, MethodObj)    // 0 Arguments
-    External (_GPE._LD0, MethodObj)    // 0 Arguments
-    External (_GPE._LD1, MethodObj)    // 0 Arguments
-    External (_GPE._LD2, MethodObj)    // 0 Arguments
-    External (_GPE._LD3, MethodObj)    // 0 Arguments
-    External (_GPE._LD4, MethodObj)    // 0 Arguments
-    External (_GPE._LD5, MethodObj)    // 0 Arguments
-    External (_GPE._LD6, MethodObj)    // 0 Arguments
-    External (_GPE._LD7, MethodObj)    // 0 Arguments
-    External (_GPE._LD8, MethodObj)    // 0 Arguments
-    External (_GPE._LD9, MethodObj)    // 0 Arguments
-    External (_GPE._LDA, MethodObj)    // 0 Arguments
-    External (_GPE._LDB, MethodObj)    // 0 Arguments
-    External (_GPE._LDC, MethodObj)    // 0 Arguments
-    External (_GPE._LDD, MethodObj)    // 0 Arguments
-    External (_GPE._LDE, MethodObj)    // 0 Arguments
-    External (_GPE._LDF, MethodObj)    // 0 Arguments
-    External (_GPE._LE0, MethodObj)    // 0 Arguments
-    External (_GPE._LE1, MethodObj)    // 0 Arguments
-    External (_GPE._LE2, MethodObj)    // 0 Arguments
-    External (_GPE._LE3, MethodObj)    // 0 Arguments
-    External (_GPE._LE4, MethodObj)    // 0 Arguments
-    External (_GPE._LE5, MethodObj)    // 0 Arguments
-    External (_GPE._LE6, MethodObj)    // 0 Arguments
-    External (_GPE._LE7, MethodObj)    // 0 Arguments
-    External (_GPE._LE8, MethodObj)    // 0 Arguments
-    External (_GPE._LE9, MethodObj)    // 0 Arguments
-    External (_GPE._LEA, MethodObj)    // 0 Arguments
-    External (_GPE._LEB, MethodObj)    // 0 Arguments
-    External (_GPE._LEC, MethodObj)    // 0 Arguments
-    External (_GPE._LED, MethodObj)    // 0 Arguments
-    External (_GPE._LEE, MethodObj)    // 0 Arguments
-    External (_GPE._LEF, MethodObj)    // 0 Arguments
-    External (_GPE._LF0, MethodObj)    // 0 Arguments
-    External (_GPE._LF1, MethodObj)    // 0 Arguments
-    External (_GPE._LF2, MethodObj)    // 0 Arguments
-    External (_GPE._LF3, MethodObj)    // 0 Arguments
-    External (_GPE._LF4, MethodObj)    // 0 Arguments
-    External (_GPE._LF5, MethodObj)    // 0 Arguments
-    External (_GPE._LF6, MethodObj)    // 0 Arguments
-    External (_GPE._LF7, MethodObj)    // 0 Arguments
-    External (_GPE._LF8, MethodObj)    // 0 Arguments
-    External (_GPE._LF9, MethodObj)    // 0 Arguments
-    External (_GPE._LFA, MethodObj)    // 0 Arguments
-    External (_GPE._LFB, MethodObj)    // 0 Arguments
-    External (_GPE._LFC, MethodObj)    // 0 Arguments
-    External (_GPE._LFD, MethodObj)    // 0 Arguments
-    External (_GPE._LFE, MethodObj)    // 0 Arguments
-    External (_GPE._LFF, MethodObj)    // 0 Arguments
+    External (_GPE._E01, MethodObj)
+    External (_GPE._E02, MethodObj)
+    External (_GPE._E03, MethodObj)
+    External (_GPE._E04, MethodObj)
+    External (_GPE._E05, MethodObj)
+    External (_GPE._E06, MethodObj)
+    External (_GPE._E07, MethodObj)
+    External (_GPE._E08, MethodObj)
+    External (_GPE._E09, MethodObj)
+    External (_GPE._E0A, MethodObj)
+    External (_GPE._E0B, MethodObj)
+    External (_GPE._E0C, MethodObj)
+    External (_GPE._E0D, MethodObj)
+    External (_GPE._E0E, MethodObj)
+    External (_GPE._E0F, MethodObj)
+    External (_GPE._E10, MethodObj)
+    External (_GPE._E11, MethodObj)
+    External (_GPE._E12, MethodObj)
+    External (_GPE._E13, MethodObj)
+    External (_GPE._E14, MethodObj)
+    External (_GPE._E15, MethodObj)
+    External (_GPE._E16, MethodObj)
+    External (_GPE._E17, MethodObj)
+    External (_GPE._E18, MethodObj)
+    External (_GPE._E19, MethodObj)
+    External (_GPE._E1A, MethodObj)
+    External (_GPE._E1B, MethodObj)
+    External (_GPE._E1C, MethodObj)
+    External (_GPE._E1D, MethodObj)
+    External (_GPE._E1E, MethodObj)
+    External (_GPE._E1F, MethodObj)
+    External (_GPE._E20, MethodObj)
+    External (_GPE._E21, MethodObj)
+    External (_GPE._E22, MethodObj)
+    External (_GPE._E23, MethodObj)
+    External (_GPE._E24, MethodObj)
+    External (_GPE._E25, MethodObj)
+    External (_GPE._E26, MethodObj)
+    External (_GPE._E27, MethodObj)
+    External (_GPE._E28, MethodObj)
+    External (_GPE._E29, MethodObj)
+    External (_GPE._E2A, MethodObj)
+    External (_GPE._E2B, MethodObj)
+    External (_GPE._E2C, MethodObj)
+    External (_GPE._E2D, MethodObj)
+    External (_GPE._E2E, MethodObj)
+    External (_GPE._E2F, MethodObj)
+    External (_GPE._E30, MethodObj)
+    External (_GPE._E31, MethodObj)
+    External (_GPE._E32, MethodObj)
+    External (_GPE._E33, MethodObj)
+    External (_GPE._E34, MethodObj)
+    External (_GPE._E35, MethodObj)
+    External (_GPE._E36, MethodObj)
+    External (_GPE._E37, MethodObj)
+    External (_GPE._E38, MethodObj)
+    External (_GPE._E39, MethodObj)
+    External (_GPE._E3A, MethodObj)
+    External (_GPE._E3B, MethodObj)
+    External (_GPE._E3C, MethodObj)
+    External (_GPE._E3D, MethodObj)
+    External (_GPE._E3E, MethodObj)
+    External (_GPE._E3F, MethodObj)
+    External (_GPE._E40, MethodObj)
+    External (_GPE._E41, MethodObj)
+    External (_GPE._E42, MethodObj)
+    External (_GPE._E43, MethodObj)
+    External (_GPE._E44, MethodObj)
+    External (_GPE._E45, MethodObj)
+    External (_GPE._E46, MethodObj)
+    External (_GPE._E47, MethodObj)
+    External (_GPE._E48, MethodObj)
+    External (_GPE._E49, MethodObj)
+    External (_GPE._E4A, MethodObj)
+    External (_GPE._E4B, MethodObj)
+    External (_GPE._E4C, MethodObj)
+    External (_GPE._E4D, MethodObj)
+    External (_GPE._E4E, MethodObj)
+    External (_GPE._E4F, MethodObj)
+    External (_GPE._E50, MethodObj)
+    External (_GPE._E51, MethodObj)
+    External (_GPE._E52, MethodObj)
+    External (_GPE._E53, MethodObj)
+    External (_GPE._E54, MethodObj)
+    External (_GPE._E55, MethodObj)
+    External (_GPE._E56, MethodObj)
+    External (_GPE._E57, MethodObj)
+    External (_GPE._E58, MethodObj)
+    External (_GPE._E59, MethodObj)
+    External (_GPE._E5A, MethodObj)
+    External (_GPE._E5B, MethodObj)
+    External (_GPE._E5C, MethodObj)
+    External (_GPE._E5D, MethodObj)
+    External (_GPE._E5E, MethodObj)
+    External (_GPE._E5F, MethodObj)
+    External (_GPE._E60, MethodObj)
+    External (_GPE._E61, MethodObj)
+    External (_GPE._E62, MethodObj)
+    External (_GPE._E63, MethodObj)
+    External (_GPE._E64, MethodObj)
+    External (_GPE._E65, MethodObj)
+    External (_GPE._E66, MethodObj)
+    External (_GPE._E67, MethodObj)
+    External (_GPE._E68, MethodObj)
+    External (_GPE._E69, MethodObj)
+    External (_GPE._E6A, MethodObj)
+    External (_GPE._E6B, MethodObj)
+    External (_GPE._E6C, MethodObj)
+    External (_GPE._E6D, MethodObj)
+    External (_GPE._E6E, MethodObj)
+    External (_GPE._E6F, MethodObj)
+    External (_GPE._E70, MethodObj)
+    External (_GPE._E71, MethodObj)
+    External (_GPE._E72, MethodObj)
+    External (_GPE._E73, MethodObj)
+    External (_GPE._E74, MethodObj)
+    External (_GPE._E75, MethodObj)
+    External (_GPE._E76, MethodObj)
+    External (_GPE._E77, MethodObj)
+    External (_GPE._E78, MethodObj)
+    External (_GPE._E79, MethodObj)
+    External (_GPE._E7A, MethodObj)
+    External (_GPE._E7B, MethodObj)
+    External (_GPE._E7C, MethodObj)
+    External (_GPE._E7D, MethodObj)
+    External (_GPE._E7E, MethodObj)
+    External (_GPE._E7F, MethodObj)
+    External (_GPE._E80, MethodObj)
+    External (_GPE._E81, MethodObj)
+    External (_GPE._E82, MethodObj)
+    External (_GPE._E83, MethodObj)
+    External (_GPE._E84, MethodObj)
+    External (_GPE._E85, MethodObj)
+    External (_GPE._E86, MethodObj)
+    External (_GPE._E87, MethodObj)
+    External (_GPE._E88, MethodObj)
+    External (_GPE._E89, MethodObj)
+    External (_GPE._E8A, MethodObj)
+    External (_GPE._E8B, MethodObj)
+    External (_GPE._E8C, MethodObj)
+    External (_GPE._E8D, MethodObj)
+    External (_GPE._E8E, MethodObj)
+    External (_GPE._E8F, MethodObj)
+    External (_GPE._E90, MethodObj)
+    External (_GPE._E91, MethodObj)
+    External (_GPE._E92, MethodObj)
+    External (_GPE._E93, MethodObj)
+    External (_GPE._E94, MethodObj)
+    External (_GPE._E95, MethodObj)
+    External (_GPE._E96, MethodObj)
+    External (_GPE._E97, MethodObj)
+    External (_GPE._E98, MethodObj)
+    External (_GPE._E99, MethodObj)
+    External (_GPE._E9A, MethodObj)
+    External (_GPE._E9B, MethodObj)
+    External (_GPE._E9C, MethodObj)
+    External (_GPE._E9D, MethodObj)
+    External (_GPE._E9E, MethodObj)
+    External (_GPE._E9F, MethodObj)
+    External (_GPE._EA0, MethodObj)
+    External (_GPE._EA1, MethodObj)
+    External (_GPE._EA2, MethodObj)
+    External (_GPE._EA3, MethodObj)
+    External (_GPE._EA4, MethodObj)
+    External (_GPE._EA5, MethodObj)
+    External (_GPE._EA6, MethodObj)
+    External (_GPE._EA7, MethodObj)
+    External (_GPE._EA8, MethodObj)
+    External (_GPE._EA9, MethodObj)
+    External (_GPE._EAA, MethodObj)
+    External (_GPE._EAB, MethodObj)
+    External (_GPE._EAC, MethodObj)
+    External (_GPE._EAD, MethodObj)
+    External (_GPE._EAE, MethodObj)
+    External (_GPE._EAF, MethodObj)
+    External (_GPE._EB0, MethodObj)
+    External (_GPE._EB1, MethodObj)
+    External (_GPE._EB2, MethodObj)
+    External (_GPE._EB3, MethodObj)
+    External (_GPE._EB4, MethodObj)
+    External (_GPE._EB5, MethodObj)
+    External (_GPE._EB6, MethodObj)
+    External (_GPE._EB7, MethodObj)
+    External (_GPE._EB8, MethodObj)
+    External (_GPE._EB9, MethodObj)
+    External (_GPE._EBA, MethodObj)
+    External (_GPE._EBB, MethodObj)
+    External (_GPE._EBC, MethodObj)
+    External (_GPE._EBD, MethodObj)
+    External (_GPE._EBE, MethodObj)
+    External (_GPE._EBF, MethodObj)
+    External (_GPE._EC0, MethodObj)
+    External (_GPE._EC1, MethodObj)
+    External (_GPE._EC2, MethodObj)
+    External (_GPE._EC3, MethodObj)
+    External (_GPE._EC4, MethodObj)
+    External (_GPE._EC5, MethodObj)
+    External (_GPE._EC6, MethodObj)
+    External (_GPE._EC7, MethodObj)
+    External (_GPE._EC8, MethodObj)
+    External (_GPE._EC9, MethodObj)
+    External (_GPE._ECA, MethodObj)
+    External (_GPE._ECB, MethodObj)
+    External (_GPE._ECC, MethodObj)
+    External (_GPE._ECD, MethodObj)
+    External (_GPE._ECE, MethodObj)
+    External (_GPE._ECF, MethodObj)
+    External (_GPE._ED0, MethodObj)
+    External (_GPE._ED1, MethodObj)
+    External (_GPE._ED2, MethodObj)
+    External (_GPE._ED3, MethodObj)
+    External (_GPE._ED4, MethodObj)
+    External (_GPE._ED5, MethodObj)
+    External (_GPE._ED6, MethodObj)
+    External (_GPE._ED7, MethodObj)
+    External (_GPE._ED8, MethodObj)
+    External (_GPE._ED9, MethodObj)
+    External (_GPE._EDA, MethodObj)
+    External (_GPE._EDB, MethodObj)
+    External (_GPE._EDC, MethodObj)
+    External (_GPE._EDD, MethodObj)
+    External (_GPE._EDE, MethodObj)
+    External (_GPE._EDF, MethodObj)
+    External (_GPE._EE0, MethodObj)
+    External (_GPE._EE1, MethodObj)
+    External (_GPE._EE2, MethodObj)
+    External (_GPE._EE3, MethodObj)
+    External (_GPE._EE4, MethodObj)
+    External (_GPE._EE5, MethodObj)
+    External (_GPE._EE6, MethodObj)
+    External (_GPE._EE7, MethodObj)
+    External (_GPE._EE8, MethodObj)
+    External (_GPE._EE9, MethodObj)
+    External (_GPE._EEA, MethodObj)
+    External (_GPE._EEB, MethodObj)
+    External (_GPE._EEC, MethodObj)
+    External (_GPE._EED, MethodObj)
+    External (_GPE._EEE, MethodObj)
+    External (_GPE._EEF, MethodObj)
+    External (_GPE._EF0, MethodObj)
+    External (_GPE._EF1, MethodObj)
+    External (_GPE._EF2, MethodObj)
+    External (_GPE._EF3, MethodObj)
+    External (_GPE._EF4, MethodObj)
+    External (_GPE._EF5, MethodObj)
+    External (_GPE._EF6, MethodObj)
+    External (_GPE._EF7, MethodObj)
+    External (_GPE._EF8, MethodObj)
+    External (_GPE._EF9, MethodObj)
+    External (_GPE._EFA, MethodObj)
+    External (_GPE._EFB, MethodObj)
+    External (_GPE._EFC, MethodObj)
+    External (_GPE._EFD, MethodObj)
+    External (_GPE._EFE, MethodObj)
+    External (_GPE._EFF, MethodObj)
+    External (_GPE._L01, MethodObj)
+    External (_GPE._L02, MethodObj)
+    External (_GPE._L03, MethodObj)
+    External (_GPE._L04, MethodObj)
+    External (_GPE._L05, MethodObj)
+    External (_GPE._L06, MethodObj)
+    External (_GPE._L07, MethodObj)
+    External (_GPE._L08, MethodObj)
+    External (_GPE._L09, MethodObj)
+    External (_GPE._L0A, MethodObj)
+    External (_GPE._L0B, MethodObj)
+    External (_GPE._L0C, MethodObj)
+    External (_GPE._L0D, MethodObj)
+    External (_GPE._L0E, MethodObj)
+    External (_GPE._L0F, MethodObj)
+    External (_GPE._L10, MethodObj)
+    External (_GPE._L11, MethodObj)
+    External (_GPE._L12, MethodObj)
+    External (_GPE._L13, MethodObj)
+    External (_GPE._L14, MethodObj)
+    External (_GPE._L15, MethodObj)
+    External (_GPE._L16, MethodObj)
+    External (_GPE._L17, MethodObj)
+    External (_GPE._L18, MethodObj)
+    External (_GPE._L19, MethodObj)
+    External (_GPE._L1A, MethodObj)
+    External (_GPE._L1B, MethodObj)
+    External (_GPE._L1C, MethodObj)
+    External (_GPE._L1D, MethodObj)
+    External (_GPE._L1E, MethodObj)
+    External (_GPE._L1F, MethodObj)
+    External (_GPE._L20, MethodObj)
+    External (_GPE._L21, MethodObj)
+    External (_GPE._L22, MethodObj)
+    External (_GPE._L23, MethodObj)
+    External (_GPE._L24, MethodObj)
+    External (_GPE._L25, MethodObj)
+    External (_GPE._L26, MethodObj)
+    External (_GPE._L27, MethodObj)
+    External (_GPE._L28, MethodObj)
+    External (_GPE._L29, MethodObj)
+    External (_GPE._L2A, MethodObj)
+    External (_GPE._L2B, MethodObj)
+    External (_GPE._L2C, MethodObj)
+    External (_GPE._L2D, MethodObj)
+    External (_GPE._L2E, MethodObj)
+    External (_GPE._L2F, MethodObj)
+    External (_GPE._L30, MethodObj)
+    External (_GPE._L31, MethodObj)
+    External (_GPE._L32, MethodObj)
+    External (_GPE._L33, MethodObj)
+    External (_GPE._L34, MethodObj)
+    External (_GPE._L35, MethodObj)
+    External (_GPE._L36, MethodObj)
+    External (_GPE._L37, MethodObj)
+    External (_GPE._L38, MethodObj)
+    External (_GPE._L39, MethodObj)
+    External (_GPE._L3A, MethodObj)
+    External (_GPE._L3B, MethodObj)
+    External (_GPE._L3C, MethodObj)
+    External (_GPE._L3D, MethodObj)
+    External (_GPE._L3E, MethodObj)
+    External (_GPE._L3F, MethodObj)
+    External (_GPE._L40, MethodObj)
+    External (_GPE._L41, MethodObj)
+    External (_GPE._L42, MethodObj)
+    External (_GPE._L43, MethodObj)
+    External (_GPE._L44, MethodObj)
+    External (_GPE._L45, MethodObj)
+    External (_GPE._L46, MethodObj)
+    External (_GPE._L47, MethodObj)
+    External (_GPE._L48, MethodObj)
+    External (_GPE._L49, MethodObj)
+    External (_GPE._L4A, MethodObj)
+    External (_GPE._L4B, MethodObj)
+    External (_GPE._L4C, MethodObj)
+    External (_GPE._L4D, MethodObj)
+    External (_GPE._L4E, MethodObj)
+    External (_GPE._L4F, MethodObj)
+    External (_GPE._L50, MethodObj)
+    External (_GPE._L51, MethodObj)
+    External (_GPE._L52, MethodObj)
+    External (_GPE._L53, MethodObj)
+    External (_GPE._L54, MethodObj)
+    External (_GPE._L55, MethodObj)
+    External (_GPE._L56, MethodObj)
+    External (_GPE._L57, MethodObj)
+    External (_GPE._L58, MethodObj)
+    External (_GPE._L59, MethodObj)
+    External (_GPE._L5A, MethodObj)
+    External (_GPE._L5B, MethodObj)
+    External (_GPE._L5C, MethodObj)
+    External (_GPE._L5D, MethodObj)
+    External (_GPE._L5E, MethodObj)
+    External (_GPE._L5F, MethodObj)
+    External (_GPE._L60, MethodObj)
+    External (_GPE._L61, MethodObj)
+    External (_GPE._L62, MethodObj)
+    External (_GPE._L63, MethodObj)
+    External (_GPE._L64, MethodObj)
+    External (_GPE._L65, MethodObj)
+    External (_GPE._L66, MethodObj)
+    External (_GPE._L67, MethodObj)
+    External (_GPE._L68, MethodObj)
+    External (_GPE._L69, MethodObj)
+    External (_GPE._L6A, MethodObj)
+    External (_GPE._L6B, MethodObj)
+    External (_GPE._L6C, MethodObj)
+    External (_GPE._L6D, MethodObj)
+    External (_GPE._L6E, MethodObj)
+    External (_GPE._L6F, MethodObj)
+    External (_GPE._L70, MethodObj)
+    External (_GPE._L71, MethodObj)
+    External (_GPE._L72, MethodObj)
+    External (_GPE._L73, MethodObj)
+    External (_GPE._L74, MethodObj)
+    External (_GPE._L75, MethodObj)
+    External (_GPE._L76, MethodObj)
+    External (_GPE._L77, MethodObj)
+    External (_GPE._L78, MethodObj)
+    External (_GPE._L79, MethodObj)
+    External (_GPE._L7A, MethodObj)
+    External (_GPE._L7B, MethodObj)
+    External (_GPE._L7C, MethodObj)
+    External (_GPE._L7D, MethodObj)
+    External (_GPE._L7E, MethodObj)
+    External (_GPE._L7F, MethodObj)
+    External (_GPE._L80, MethodObj)
+    External (_GPE._L81, MethodObj)
+    External (_GPE._L82, MethodObj)
+    External (_GPE._L83, MethodObj)
+    External (_GPE._L84, MethodObj)
+    External (_GPE._L85, MethodObj)
+    External (_GPE._L86, MethodObj)
+    External (_GPE._L87, MethodObj)
+    External (_GPE._L88, MethodObj)
+    External (_GPE._L89, MethodObj)
+    External (_GPE._L8A, MethodObj)
+    External (_GPE._L8B, MethodObj)
+    External (_GPE._L8C, MethodObj)
+    External (_GPE._L8D, MethodObj)
+    External (_GPE._L8E, MethodObj)
+    External (_GPE._L8F, MethodObj)
+    External (_GPE._L90, MethodObj)
+    External (_GPE._L91, MethodObj)
+    External (_GPE._L92, MethodObj)
+    External (_GPE._L93, MethodObj)
+    External (_GPE._L94, MethodObj)
+    External (_GPE._L95, MethodObj)
+    External (_GPE._L96, MethodObj)
+    External (_GPE._L97, MethodObj)
+    External (_GPE._L98, MethodObj)
+    External (_GPE._L99, MethodObj)
+    External (_GPE._L9A, MethodObj)
+    External (_GPE._L9B, MethodObj)
+    External (_GPE._L9C, MethodObj)
+    External (_GPE._L9D, MethodObj)
+    External (_GPE._L9E, MethodObj)
+    External (_GPE._L9F, MethodObj)
+    External (_GPE._LA0, MethodObj)
+    External (_GPE._LA1, MethodObj)
+    External (_GPE._LA2, MethodObj)
+    External (_GPE._LA3, MethodObj)
+    External (_GPE._LA4, MethodObj)
+    External (_GPE._LA5, MethodObj)
+    External (_GPE._LA6, MethodObj)
+    External (_GPE._LA7, MethodObj)
+    External (_GPE._LA8, MethodObj)
+    External (_GPE._LA9, MethodObj)
+    External (_GPE._LAA, MethodObj)
+    External (_GPE._LAB, MethodObj)
+    External (_GPE._LAC, MethodObj)
+    External (_GPE._LAD, MethodObj)
+    External (_GPE._LAE, MethodObj)
+    External (_GPE._LAF, MethodObj)
+    External (_GPE._LB0, MethodObj)
+    External (_GPE._LB1, MethodObj)
+    External (_GPE._LB2, MethodObj)
+    External (_GPE._LB3, MethodObj)
+    External (_GPE._LB4, MethodObj)
+    External (_GPE._LB5, MethodObj)
+    External (_GPE._LB6, MethodObj)
+    External (_GPE._LB7, MethodObj)
+    External (_GPE._LB8, MethodObj)
+    External (_GPE._LB9, MethodObj)
+    External (_GPE._LBA, MethodObj)
+    External (_GPE._LBB, MethodObj)
+    External (_GPE._LBC, MethodObj)
+    External (_GPE._LBD, MethodObj)
+    External (_GPE._LBE, MethodObj)
+    External (_GPE._LBF, MethodObj)
+    External (_GPE._LC0, MethodObj)
+    External (_GPE._LC1, MethodObj)
+    External (_GPE._LC2, MethodObj)
+    External (_GPE._LC3, MethodObj)
+    External (_GPE._LC4, MethodObj)
+    External (_GPE._LC5, MethodObj)
+    External (_GPE._LC6, MethodObj)
+    External (_GPE._LC7, MethodObj)
+    External (_GPE._LC8, MethodObj)
+    External (_GPE._LC9, MethodObj)
+    External (_GPE._LCA, MethodObj)
+    External (_GPE._LCB, MethodObj)
+    External (_GPE._LCC, MethodObj)
+    External (_GPE._LCD, MethodObj)
+    External (_GPE._LCE, MethodObj)
+    External (_GPE._LCF, MethodObj)
+    External (_GPE._LD0, MethodObj)
+    External (_GPE._LD1, MethodObj)
+    External (_GPE._LD2, MethodObj)
+    External (_GPE._LD3, MethodObj)
+    External (_GPE._LD4, MethodObj)
+    External (_GPE._LD5, MethodObj)
+    External (_GPE._LD6, MethodObj)
+    External (_GPE._LD7, MethodObj)
+    External (_GPE._LD8, MethodObj)
+    External (_GPE._LD9, MethodObj)
+    External (_GPE._LDA, MethodObj)
+    External (_GPE._LDB, MethodObj)
+    External (_GPE._LDC, MethodObj)
+    External (_GPE._LDD, MethodObj)
+    External (_GPE._LDE, MethodObj)
+    External (_GPE._LDF, MethodObj)
+    External (_GPE._LE0, MethodObj)
+    External (_GPE._LE1, MethodObj)
+    External (_GPE._LE2, MethodObj)
+    External (_GPE._LE3, MethodObj)
+    External (_GPE._LE4, MethodObj)
+    External (_GPE._LE5, MethodObj)
+    External (_GPE._LE6, MethodObj)
+    External (_GPE._LE7, MethodObj)
+    External (_GPE._LE8, MethodObj)
+    External (_GPE._LE9, MethodObj)
+    External (_GPE._LEA, MethodObj)
+    External (_GPE._LEB, MethodObj)
+    External (_GPE._LEC, MethodObj)
+    External (_GPE._LED, MethodObj)
+    External (_GPE._LEE, MethodObj)
+    External (_GPE._LEF, MethodObj)
+    External (_GPE._LF0, MethodObj)
+    External (_GPE._LF1, MethodObj)
+    External (_GPE._LF2, MethodObj)
+    External (_GPE._LF3, MethodObj)
+    External (_GPE._LF4, MethodObj)
+    External (_GPE._LF5, MethodObj)
+    External (_GPE._LF6, MethodObj)
+    External (_GPE._LF7, MethodObj)
+    External (_GPE._LF8, MethodObj)
+    External (_GPE._LF9, MethodObj)
+    External (_GPE._LFA, MethodObj)
+    External (_GPE._LFB, MethodObj)
+    External (_GPE._LFC, MethodObj)
+    External (_GPE._LFD, MethodObj)
+    External (_GPE._LFE, MethodObj)
+    External (_GPE._LFF, MethodObj)
 
     Method (GXRF, 0, NotSerialized)
     {
