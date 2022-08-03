@@ -196,14 +196,7 @@ DefinitionBlock ("", "SSDT", 2, "EVEDBG", "MEMSIODB", 0x00003000)
 
         Method (DBG3, 1, NotSerialized)
         {
-        Debug= "SystemIO Dump = "
-        OperationRegion (SPRT, SystemIO, Arg0, 0x40)
-        Field (SPRT, ByteAcc, Lock, Preserve)
-        {
-            TEMP,   512
-        }
-        Debug= TEMP
-
+            XIOD (Arg0)
         }
 
         Method (DBG4, 1, NotSerialized)
@@ -377,6 +370,19 @@ DefinitionBlock ("", "SSDT", 2, "EVEDBG", "MEMSIODB", 0x00003000)
 
             Local4 -= One
         }
+    }
+    
+       Method (XIOD, 1, NotSerialized)
+    {
+            Debug = "SystemIO Dump = "
+            Local0=Arg0
+            OperationRegion (SPRT, SystemIO, Local0, 0x40)
+            Field (SPRT, ByteAcc, Lock, Preserve)
+            {
+                TEMP,   512
+            }
+
+            Debug = TEMP /* \RMDT.DBG3.TEMP */
     }
 
 
