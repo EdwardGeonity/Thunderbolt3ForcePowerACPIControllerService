@@ -1,0 +1,24 @@
+HOW _Exx: Edge-Triggered GPE EVENT IS POLLED
+
+
+AND HERE IS HOW IT WORKS:
+--------------------------------------------------------------------------------------------------------------
+\_GPE._E16 is dec 22, 
+
+01000000 is 40 at offset (0x1882 or 0x02) , but before 40, there is two Bytes, so:
+Two Bytes are 2*8=16
+Event bit is 2nd bit, so 16+2=18, but thats correct for human, not a PC
+PC will read from backward, so One bit is Six, because (0,1,2,3,4,5,6 is Equal One)
+	Then we can sum 16+6=22
+
+So if bit №18 is One, then call a _E16
+
+--------------------------------------------------------------------------------------------------------------
+\_GPE._E4C is dec 76, 
+
+00010000 is 10 at offset (0x1889 or 0x09), but before 10, there are Nine Bytes, so:
+Nine Bytes are 9*8=72
+Event bit is 4th bit, So 72+4=76, but thats correct for human, not a PC
+PC will read from backward, so One bit is Fourth, because (0,1,2,3,4 is Equal One)
+
+So if bit №76 is One, then call a _E4C(76) method
