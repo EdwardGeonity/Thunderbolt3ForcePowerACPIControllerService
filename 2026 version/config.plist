@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ACPI</key>
+	<dict>
+		<key>DSDT</key>
+		<dict>
+			<key>Patches</key>
+			<array>
+				<dict>
+					<key>Comment</key>
+					<string>ADBG 2 QDBG - Enable debug for platform</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					QURCRwmk
+					</data>
+					<key>Replace</key>
+					<data>
+					UURCRwmk
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_L61 to XL61</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X0w2MQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WEw2MQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_E4C to XE4C</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X0U0Qw==
+					</data>
+					<key>Replace</key>
+					<data>
+					WEU0Qw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>TBT3 - Skylake - TINI Bypass</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					cA1USU5J
+					</data>
+					<key>Replace</key>
+					<data>
+					pABwDU5J
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change _PTS to ZPTS</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1BUUwE=
+					</data>
+					<key>Replace</key>
+					<data>
+					WlBUUwE=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change _WAK to ZWAK</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1dBSwE=
+					</data>
+					<key>Replace</key>
+					<data>
+					WldBSwE=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change _WAK to ZWAK (G3)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1dBSwk=
+					</data>
+					<key>Replace</key>
+					<data>
+					WldBSwk=
+					</data>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
